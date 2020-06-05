@@ -5,22 +5,22 @@ const carsModel = require('../models/carsModel.js');
 const app = express();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  // res.send('respond with a resource');
-  // var Cars = mongoose.model('cars-data');
-  // var test = Cars.find();
-  // res.send(test);
-  console.log('This is to get the collections............',mongoose.connection.db.listCollections());
-});
+// router.get('/', function(req, res, next) {
+//   // res.send('respond with a resource');
+//   // var Cars = mongoose.model('cars-data');
+//   // var test = Cars.find();
+//   // res.send(test);
+//   console.log('This is to get the collections............',mongoose.connection.db.listCollections());
+// });
 
-router.get('/cars', function(req, res, next) {
-  // res.send('respond with a resource');
-  carsModel.find().then(res =>{
-    res.send(res);
-  },err =>{
-    console.log('Error in fetching cars data...',err);
-  })
-});
+// router.get('/cars', function(req, res, next) {
+//   // res.send('respond with a resource');
+//   carsModel.find().then(res =>{
+//     res.send(res);
+//   },err =>{
+//     console.log('Error in fetching cars data...',err);
+//   })
+// });
 
 router.get('/carsdata', async (req, res) => {
   const result = await carsModel.find();
